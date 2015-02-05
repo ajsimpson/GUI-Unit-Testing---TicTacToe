@@ -1,4 +1,4 @@
-//package edu.jsu.mcis;
+package edu.jsu.mcis;
 
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -11,7 +11,6 @@ public class TicTacToeGUITest {
 		t.startGame();
 		for(int i=0; i<9; i++) {
 			char ch = (char)('0'+i+1);
-			//cells[i].setText(""+ch);
 			assertEquals(""+ch, t.cells[i].getText());
 		}
 	}
