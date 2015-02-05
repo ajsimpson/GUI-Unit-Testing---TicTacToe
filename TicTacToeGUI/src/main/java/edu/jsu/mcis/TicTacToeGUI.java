@@ -1,4 +1,4 @@
-//package edu.jsu.mcis;
+package edu.jsu.mcis;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,7 +46,6 @@ public class TicTacToeGUI extends JFrame {
 		result = new JLabel("OTurn", SwingConstants.CENTER);
 		result.setForeground(Color.white);
 
-		//Add elements to the grid content pane
 		for(int i=0; i<9; i++)
 			content.add(cells[i]);
 			
@@ -105,27 +104,22 @@ public class TicTacToeGUI extends JFrame {
 	
 	private class cellButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//If game over, ignore
+
 			if(isGameOver)
 				return;
-			
-			//Get button pressed
+
 			JButton pressed = (JButton)(e.getSource());
 			
-			//Get text of button
 			String text = pressed.getText();
 			
-			//If cell is taken, ignore
 			if(text.equals("O") || text.equals("X"))
 				return;
 			
-			//Add nought or cross
 			if(OTurn)
 				pressed.setText("O");
 			else
 				pressed.setText("X");
 			
-			//Check winner
 			if(checkForWinner())
 			{
 				isGameOver = true;
